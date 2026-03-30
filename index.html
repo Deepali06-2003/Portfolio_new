@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"/><script src="script.js"></script>
+<link rel="stylesheet" href="style.css"/>
+<script src="script.js" defer></script>
 </head>
 <body>
 
-<canvas id="matrix"></canvas>
+<canvas id="matrix">Your browser does not support canvas</canvas>
 
 <!-- ══════════ LOCK SCREEN ══════════ -->
 <div class="screen" id="lockscreen">
@@ -90,12 +92,16 @@
   <div class="win-body">
     <div class="ascii-banner">
 
+ <!-- formatting preserved -->
+        <pre class="ascii-banner">
  ██████╗ ███████╗███████╗██████╗  █████╗ ██╗     ██╗
  ██╔══██╗██╔════╝██╔════╝██╔══██╗██╔══██╗██║     ██║
  ██║  ██║█████╗  █████╗  ██████╔╝███████║██║     ██║
  ██║  ██║██╔══╝  ██╔══╝  ██╔═══╝ ██╔══██║██║     ██║
  ██████╔╝███████╗███████╗██║     ██║  ██║███████╗██║
  ╚═════╝ ╚══════╝╚══════╝╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝
+        </pre>
+
      </div>
 
     <div class="home-tagline">
@@ -165,43 +171,95 @@ I am constantly expanding my technical arsenal—from Deep Learning to iOS devel
     </div>
 
 
-<!-- ── WINDOW: Skills ── -->
 <div class="mac-window" id="win-skills" style="top:90px;left:160px;width:620px;height:500px;display:none;">
+  
   <div class="win-titlebar" data-win="win-skills">
     <div class="win-controls">
-      <button class="wc wc-close" onclick="closeWindow('win-skills')" title="Close"></button>
-      <button class="wc wc-min" onclick="minimizeWindow('win-skills')" title="Minimize"></button>
-      <button class="wc wc-max" onclick="maximizeWindow('win-skills')" title="Maximize"></button>
+      <!-- removed inline JS -->
+      <button class="wc wc-close" data-action="close" data-target="win-skills" title="Close"></button>
+      <button class="wc wc-min" data-action="minimize" data-target="win-skills" title="Minimize"></button>
+      <button class="wc wc-max" data-action="maximize" data-target="win-skills" title="Maximize"></button>
     </div>
     <div class="win-title">Skills</div>
   </div>
 
   <div class="win-body">
+
     <div class="section-header">
       <span class="sec-path">~/</span>
       <span class="sec-title">skills</span>
     </div>
 
+    <!-- LANGUAGES -->
     <div class="skill-group-label">LANGUAGES</div>
     <div class="skill-bars">
-      <div class="skill-row"><span class="skill-name">C / C++</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct">--85%</span></div>
-      <div class="skill-row"><span class="skill-name">Python</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—79%</span></div>
-      <div class="skill-row"><span class="skill-name">Swift</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct">--60%</span></div>
+      <div class="skill-row">
+        <span class="skill-name">C / C++</span>
+        <div class="skill-track"><div class="skill-fill" style="width:0%"></div></div>
+        <span class="skill-pct">85%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Python</span>
+        <div class="skill-track"><div class="skill-fill" style="width:0%"></div></div>
+        <span class="skill-pct">79%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Swift</span>
+        <div class="skill-track"><div class="skill-fill" style="width:0%"></div></div>
+        <span class="skill-pct">60%</span>
+      </div>
     </div>
 
+    <!-- WEB & DATABASE -->
     <div class="skill-group-label">WEB & DATABASE</div>
     <div class="skill-bars">
-      <div class="skill-row"><span class="skill-name">HTML</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—70%</span></div>
-      <div class="skill-row"><span class="skill-name">CSS</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—65%</span></div>
-      <div class="skill-row"><span class="skill-name">DBMS</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—77%</span></div>
-      <div class="skill-row"><span class="skill-name">MySQL</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—82%</span></div>
+      <div class="skill-row">
+        <span class="skill-name">HTML</span>
+        <div class="skill-track"><div class="skill-fill" style="width:0%"></div></div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">CSS</span>
+        <div class="skill-track"><div class="skill-fill" style="width:0%"></div></div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">DBMS</span>
+        <div class="skill-track"><div class="skill-fill" style="width:0%"></div></div>
+        <span class="skill-pct">77%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">MySQL</span>
+        <div class="skill-track"><div class="skill-fill" style="width:0%"></div></div>
+        <span class="skill-pct">82%</span>
+      </div>
     </div>
 
+    <!-- TOOLS -->
     <div class="skill-group-label">TOOLS & PLATFORMS</div>
     <div class="skill-bars">
-      <div class="skill-row"><span class="skill-name">Jupyter</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct">--85%</span></div>
-      <div class="skill-row"><span class="skill-name">GitHub</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—77%</span></div>
-      <div class="skill-row"><span class="skill-name">Git</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—83%</span></div>
+      <div class="skill-row">
+        <span class="skill-name">Jupyter</span>
+        <div class="skill-track"><div class="skill-fill" style="width:0%"></div></div>
+        <span class="skill-pct">85%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">GitHub</span>
+        <div class="skill-track"><div class="skill-fill" style="width:0%"></div></div>
+        <span class="skill-pct">77%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Git</span>
+        <div class="skill-track"><div class="skill-fill" style="width:0%"></div></div>
+        <span class="skill-pct">83%</span>
+      </div>
     </div>
 
   </div>
@@ -275,53 +333,67 @@ I am constantly expanding my technical arsenal—from Deep Learning to iOS devel
 
 
  <!-- ── WINDOW: Education ── -->
-    <div class="mac-window" id="win-education" style="top:80px;left:130px;width:600px;height:440px;display:none;">
-      <div class="win-titlebar" data-win="win-education">
-        <div class="win-controls">
-          <button class="wc wc-close" onclick="closeWindow('win-education')" title="Close"></button>
-          <button class="wc wc-min"   onclick="minimizeWindow('win-education')" title="Minimize"></button>
-          <button class="wc wc-max"   onclick="maximizeWindow('win-education')" title="Maximize"></button>
-        </div>
-        <div class="win-title">Education</div>
-      </div>
-      <div class="win-body">
-        <div class="section-header"><span class="sec-path">~/</span><span class="sec-title">education</span></div>
-        <div class="timeline">
-          <div class="tl-entry">
-            <div class="tl-dot"></div>
-            <div class="tl-bar"></div>
-            <div class="tl-content">
-              <div class="tl-period">[Aug 2023 — PRESENT]</div>
-              <div class="tl-title">BTech — Computer Science</div>
-              <div class="tl-title">CGPA: 8.40</div>
-              <div class="tl-body">[Lovely Professional University, Punjab]<br>Specialization: AI ML &amp; DSA<br>Focus: Machine Learning, DSA, System Programming</div>
-            </div>
-          </div>
-          <div class="tl-entry">
-            <div class="tl-dot"></div>
-            <div class="tl-bar"></div>
-            <div class="tl-content">
-              <div class="tl-period">[Apr 2021 — Mar 2022]</div>
-              <div class="tl-title">Higher Secondary (11th–12th)</div>
-              <div class="tl-body”>[Innocent Hearts School , Jalandhar , Punjab]<br>[Stream — PCM]<br>[Percentage: 90.2%]</div>
-            </div>
-          </div>
-          <div class="tl-entry last">
-            <div class="tl-dot"></div>
-            <div class="tl-content">
-              <div class="tl-period">[Apr 2019 — Mar 2020]</div>
-              <div class="tl-title">Secondary Education (10th)</div>
- <div class="tl-body">[Cambridge International School, Jalandhar , Punjab]<br>[Percentage: 89%]</div>
-            </div>
-          </div>
-        </div>
-      </div>
+   <div class="mac-window" id="win-education">
+  <div class="win-titlebar" data-win="win-education">
+    <div class="win-controls">
+      <button class="wc wc-close" onclick="closeWindow('win-education')" title="Close"></button>
+      <button class="wc wc-min" onclick="minimizeWindow('win-education')" title="Minimize"></button>
+      <button class="wc wc-max" onclick="maximizeWindow('win-education')" title="Maximize"></button>
     </div>
+    <div class="win-title">Education</div>
+  </div>
+
+  <div class="win-body">
+    <div class="section-header">
+      <span class="sec-path">~/</span>
+      <span class="sec-title">education</span>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-bar"></div>
+        <div class="tl-content">
+          <div class="tl-period">Aug 2023 — Present</div>
+          <h3 class="tl-degree">B.Tech — Computer Science</h3>
+          <div class="tl-meta">Lovely Professional University, Punjab</div>
+          <div class="tl-sub">Specialization: AI, ML, DSA</div>
+          <div class="tl-sub">Focus: Machine Learning, Data Structures & Algorithms, System Programming</div>
+          <div class="tl-score">CGPA: 8.4</div>
+        </div>
+      </div>
+
+      <div class="tl-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-bar"></div>
+        <div class="tl-content">
+          <div class="tl-period">Apr 2021 — Mar 2022</div>
+          <h3 class="tl-degree">Higher Secondary (11th–12th)</h3>
+          <div class="tl-meta">Innocent Hearts School, Jalandhar, Punjab</div>
+          <div class="tl-sub">Stream: PCM</div>
+          <div class="tl-score">Percentage: 90.2%</div>
+        </div>
+      </div>
+
+      <div class="tl-entry last">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-period">Apr 2019 — Mar 2020</div>
+          <h3 class="tl-degree">Secondary Education (10th)</h3>
+          <div class="tl-meta">Cambridge International School, Jalandhar, Punjab</div>
+          <div class="tl-score">Percentage: 89%</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
 
 <!-- ── WINDOW: Achievements ── -->
-<div class="mac-window" id="win-achievements" style="top:85px;left:110px;width:580px;height:420px;display:none;">
+<div class="mac-window" id="win-achievements">
   <div class="win-titlebar" data-win="win-achievements">
     <div class="win-controls">
       <button class="wc wc-close" onclick="closeWindow('win-achievements')" title="Close"></button>
@@ -337,24 +409,35 @@ I am constantly expanding my technical arsenal—from Deep Learning to iOS devel
       <span class="sec-title">achievements</span>
     </div>
 
-    <div class="ach-group">
-      <div class="ach-group-label">TECHNICAL</div>
-      <div class="ach-item"><span class="ach-bullet">◆</span>Solved 250+ problems on LeetCode</div>
+    <div class="ach-group" data-category="technical">
+      <h3 class="ach-group-label">Technical</h3>
+      <ul class="ach-list">
+        <li class="ach-item" data-date="2026">
+          Solved 250+ problems on LeetCode
+        </li>
+      </ul>
     </div>
 
-    <div class="ach-group">
-      <div class="ach-group-label">SPORTS</div>
-      <div class="ach-item"><span class="ach-bullet">◆</span>Participated in All India Inter-University Table Tennis Championship — Osmania University, Hyderabad (Dec 2025)</div>
+    <div class="ach-group" data-category="sports">
+      <h3 class="ach-group-label">Sports</h3>
+      <ul class="ach-list">
+        <li class="ach-item" data-date="2025-12">
+          Participated in All India Inter-University Table Tennis Championship — Osmania University, Hyderabad (Dec 2025)
+        </li>
+      </ul>
     </div>
 
-    <div class="ach-group">
-      <div class="ach-group-label">SOCIAL WORK</div>
-      <div class="ach-item"><span class="ach-bullet">◆</span>Volunteer at Old Age Home — Apahaj Ashram, Jalandhar (Jun 2024 - Jul 2024)</div>
+    <div class="ach-group" data-category="social">
+      <h3 class="ach-group-label">Social Work</h3>
+      <ul class="ach-list">
+        <li class="ach-item" data-date="2024-06_2024-07">
+          Volunteered at Old Age Home — Apahaj Ashram, Jalandhar (Jun 2024 – Jul 2024)
+        </li>
+      </ul>
     </div>
 
   </div>
 </div>
-
 
 <!-- ── WINDOW: Certifications ── -->
 <div class="mac-window" id="win-certifications" style="top:75px;left:140px;width:660px;height:460px;display:none;">
@@ -424,67 +507,93 @@ I am constantly expanding my technical arsenal—from Deep Learning to iOS devel
 
 
  <!-- ── WINDOW: Training ── -->
-    <div class="mac-window" id="win-training" style="top:80px;left:120px;width:620px;height:480px;display:none;">
-      <div class="win-titlebar" data-win="win-training">
-        <div class="win-controls">
-          <button class="wc wc-close" onclick="closeWindow('win-training')" title="Close"></button>
-          <button class="wc wc-min"   onclick="minimizeWindow('win-training')" title="Minimize"></button>
-          <button class="wc wc-max"   onclick="maximizeWindow('win-training')" title="Maximize"></button>
-        </div>
-        <div class="win-title">Training</div>
-      </div>
-      <div class="win-body">
-        <div class="section-header"><span class="sec-path">~/</span><span class="sec-title">training</span></div>
-        <div class="training-tabs">
-          <button class="tab-btn active" data-tab="tab-sec">cybersec</button>
-          <button class="tab-btn" data-tab="tab-dsa">dsa</button>
-          <button class="tab-btn" data-tab="tab-courses">courses</button>
-        </div>
+   <div class="mac-window" id="win-training">
+  <div class="win-titlebar" data-win="win-training">
+    <div class="win-controls">
+      <button class="wc wc-close" onclick="closeWindow('win-training')" title="Close"></button>
+      <button class="wc wc-min" onclick="minimizeWindow('win-training')" title="Minimize"></button>
+      <button class="wc wc-max" onclick="maximizeWindow('win-training')" title="Maximize"></button>
+    </div>
+    <div class="win-title">Training</div>
+  </div>
 
+  <div class="win-body">
+    <div class="section-header">
+      <span class="sec-path">~/</span>
+      <span class="sec-title">training</span>
+    </div>
 
+    <div class="training-tabs" role="tablist">
+      <button class="tab-btn active" data-tab="tab-dsa" role="tab" aria-selected="true">DSA</button>
+      <button class="tab-btn" data-tab="tab-cyber" role="tab" aria-selected="false">Cybersecurity</button>
+      <button class="tab-btn" data-tab="tab-courses" role="tab" aria-selected="false">Courses</button>
+    </div>
 
-        <div class="tab-pane active" id="tab-sec">
-          <div class="timeline">
-            <div class="tl-entry">
-              <div class="tl-dot"></div>
-              <div class="tl-bar"></div>
-              <div class="tl-content">
-                <div class="tl-period">Jun 2025 — Jul 2025</div>
-                <div class="tl-title">Data Structures and Algorithms — Hitbullseye</div>
-                <div class="tl-body">Completed a 140-hour Data Structures and Algorithms program from beginner to advanced level.<br>
-          Strengthened analytical reasoning and algorithmic understanding.<br>
-          Improved problem-solving efficiency through structured practice.</div>
-              </div>
-            </div>
-   </div>
-        </div>
-        <div class="tab-pane" id="tab-dsa">
-          <div class="timeline">
-            <div class="tl-entry">
-              <div class="tl-dot"></div>
-              <div class="tl-bar"></div>
-              <div class="tl-content">
-                <div class="tl-period">[YEAR — PRESENT]</div>
-                <div class="tl-title">COMPETITIVE PROGRAMMING</div>
-                <div class="tl-body">[e.g. LeetCode — X problems solved, rating, Codeforces handle + max rating]</div>
-              </div>
-            </div>
-<div class="tl-entry last">
-              <div class="tl-dot"></div>
-              <div class="tl-content">
-                <div class="tl-period">[YEAR]</div>
-                <div class="tl-title">TOPICS MASTERED</div>
-                <div class="tl-body">[e.g. Trees, Graphs, DP, Segment Trees, Backtracking, Sorting algorithms]</div>
-              </div>
-            </div>
+    <!-- DSA TAB -->
+    <div class="tab-pane active" id="tab-dsa" role="tabpanel">
+      <div class="timeline">
+
+        <div class="tl-entry" data-date="2025-06_2025-07">
+          <div class="tl-dot"></div>
+          <div class="tl-bar"></div>
+          <div class="tl-content">
+            <div class="tl-period">Jun 2025 — Jul 2025</div>
+            <h3 class="tl-degree">Data Structures and Algorithms — Hitbullseye</h3>
+            <ul class="tl-list">
+              <li>Completed a 140-hour structured DSA program</li>
+              <li>Strengthened analytical reasoning and algorithm design</li>
+              <li>Improved problem-solving efficiency through practice</li>
+            </ul>
           </div>
         </div>
-        <div class="tab-pane" id="tab-courses">
 
- <div class="ach-item"><span class="ach-bullet">◆</span> Privacy and Security in Online Social Media — NPTEL — 2025</div>
- </div>
+        <div class="tl-entry last" data-date="2025">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-period">2025 — Present</div>
+            <h3 class="tl-degree">Competitive Programming</h3>
+            <ul class="tl-list">
+              <li>Active problem solving on LeetCode and similar platforms</li>
+              <li>Focus on optimization and pattern recognition</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
+
+    <!-- CYBERSEC TAB -->
+    <div class="tab-pane" id="tab-cyber" role="tabpanel">
+      <div class="timeline">
+
+        <div class="tl-entry last" data-date="2025-10">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-period">Oct 2025</div>
+            <h3 class="tl-degree">Privacy and Security in Online Social Media — NPTEL</h3>
+            <ul class="tl-list">
+              <li>Studied security threats in social platforms</li>
+              <li>Learned privacy preservation techniques</li>
+              <li>Analyzed real-world cyber attack patterns</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- COURSES TAB -->
+    <div class="tab-pane" id="tab-courses" role="tabpanel">
+      <ul class="course-list">
+        <li data-date="2025-06">iOS Development for Beginners (Swift) — GeeksforGeeks</li>
+        <li data-date="2025-03">Deep Learning Mastery (Python) — Udemy</li>
+        <li data-date="2023-08">Data Structures and Algorithms (Python) — Coding Ninjas</li>
+        <li data-date="2023-04">Introduction to Python — Coding Ninjas</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
 
 
 
@@ -516,44 +625,68 @@ I am constantly expanding my technical arsenal—from Deep Learning to iOS devel
 
 
 <!-- ── WINDOW: Contact ── -->
-    <div class="mac-window" id="win-contact" style="top:90px;left:150px;width:580px;height:420px;display:none;">
-      <div class="win-titlebar" data-win="win-contact">
-        <div class="win-controls">
-          <button class="wc wc-close" onclick="closeWindow('win-contact')" title="Close"></button>
-          <button class="wc wc-min"   onclick="minimizeWindow('win-contact')" title="Minimize"></button>
-          <button class="wc wc-max"   onclick="maximizeWindow('win-contact')" title="Maximize"></button>
-        </div>
-        <div class="win-title">Contact</div>
-      </div>
-      <div class="win-body">
-        <div class="section-header"><span class="sec-path">~/</span><span class="sec-title">contact</span></div>
-        <div class="contact-list">
-          <div class="contact-row">
-            <span class="contact-pfx">$</span>
-            <span class="contact-key">GITHUB</span>
-            <span class="contact-val"><a href="https://github.com/Deepali06-2003" target="_blank">github.com/Deepali06-2003</a></span>
-          </div>
-          <div class="contact-row">
-            <span class="contact-pfx">$</span>
-            <span class="contact-key">LINKEDIN</span>
-            <span class="contact-val"><a href="https://www.linkedin.com/in/deepali-saroha2003/" target="_blank">linkedin.com/in/deepali-saroha</a></span>
-          </div>
-          <div class="contact-row">
-            <span class="contact-pfx">$</span>
-            <span class="contact-key">EMAIL</span>
-            <span class="contact-val"><a href="mailto:[YOUR_EMAIL]">deepali46045@gmail.com</a></span>
-          </div>
-          <!-- <div class="contact-row">
-            <span class="contact-pfx">$</span>
-            <span class="contact-key">TWITTER/X</span>
-            <span class="contact-val"><a href="#">[YOUR HANDLE]</a></span>
-          </div> -->
-        </div>
-        <div class="prose-block" style="margin-top:16px">
-          I am open to internships, ML projects, and collaborative opportunities. Feel free to reach out for discussions, learning, or building something impactful together.
-        </div>
-      </div>
+    <div class="mac-window" id="win-contact">
+  <div class="win-titlebar" data-win="win-contact">
+    <div class="win-controls">
+      <button class="wc wc-close" onclick="closeWindow('win-contact')" title="Close"></button>
+      <button class="wc wc-min" onclick="minimizeWindow('win-contact')" title="Minimize"></button>
+      <button class="wc wc-max" onclick="maximizeWindow('win-contact')" title="Maximize"></button>
     </div>
+    <div class="win-title">Contact</div>
+  </div>
+
+  <div class="win-body">
+    <div class="section-header">
+      <span class="sec-path">~/</span>
+      <span class="sec-title">contact</span>
+    </div>
+
+    <ul class="contact-list">
+
+      <li class="contact-row" data-platform="github">
+        <span class="contact-key">GitHub</span>
+        <a 
+          class="contact-val"
+          href="https://github.com/Deepali06-2003" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="GitHub profile"
+        >
+          github.com/Deepali06-2003
+        </a>
+      </li>
+
+      <li class="contact-row" data-platform="linkedin">
+        <span class="contact-key">LinkedIn</span>
+        <a 
+          class="contact-val"
+          href="https://www.linkedin.com/in/deepali-saroha2003/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="LinkedIn profile"
+        >
+          linkedin.com/in/deepali-saroha2003
+        </a>
+      </li>
+
+      <li class="contact-row" data-platform="email">
+        <span class="contact-key">Email</span>
+        <a 
+          class="contact-val"
+          href="mailto:deepali46045@gmail.com"
+          aria-label="Send email"
+        >
+          deepali46045@gmail.com
+        </a>
+      </li>
+
+    </ul>
+
+    <div class="prose-block contact-note">
+      Open to internships, machine learning projects, and technical collaborations.
+    </div>
+  </div>
+</div>
   </div><!-- /desktop -->
 
 <!-- ══════════ macOS DOCK ══════════ -->
