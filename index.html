@@ -13,6 +13,7 @@
 
 <canvas id="matrix"></canvas>
 
+<!-- ══════════ LOCK SCREEN ══════════ -->
 <div class="screen" id="lockscreen">
   <div id="lock-blur"></div>
   <div id="lock-content">
@@ -24,209 +25,607 @@
       </svg>
     </div>
     <div id="lock-name">Deepali Saroha</div>
-    <div id="lock-tag">Computer Science Engineer</div>
+    <div id="lock-tag">portfolio</div>
     <div id="lock-time-wrap">
       <div id="lock-clock">00:00</div>
       <div id="lock-date">Monday, January 1</div>
     </div>
     <div id="lock-swipe-hint">
-      <div id="lock-hint-text">click to enter system</div>
+      <div id="lock-chevrons">
+        <span>&#8963;</span>
+        <span>&#8963;</span>
+        <span>&#8963;</span>
+      </div>
+      <div id="lock-hint-text">swipe up or click to enter</div>
     </div>
   </div>
 </div>
 
+<!-- ══════════ GRANTED ══════════ -->
+<div class="screen gone" id="granted">
+  <div id="granted-text">ACCESS GRANTED</div>
+  <div class="grnt-sub">IDENTITY VERIFIED — LOADING PORTFOLIO</div>
+</div>
+
+<!-- ══════════ MAIN OS (macOS style) ══════════ -->
 <div class="screen gone" id="os">
 
+  <!-- TOP MENU BAR -->
   <div id="topbar">
     <div class="tb-l">
       <span class="tb-apple">⌘</span>
-      <span class="tb-brand">DS</span>
+      <span class="tb-brand">AKS</span>
       <span class="tb-menu-item">Portfolio</span>
-      <span class="tb-menu-item">Terminal</span>
+      <span class="tb-menu-item">View</span>
+      <span class="tb-menu-item">Help</span>
     </div>
     <div class="tb-r">
-      <span class="tb-secure">● STATUS: ACTIVE</span>
+      <span class="tb-secure">● SECURE</span>
       <span class="tb-sep">|</span>
       <span id="clock">--:--</span>
     </div>
   </div>
 
+<!-- DESKTOP AREA (where windows appear) -->
   <div id="desktop">
 
-    <div class="mac-window" id="win-home" style="top:50px;left:50px;width:600px;height:400px;">
-      <div class="win-titlebar" data-win="win-home">
-        <div class="win-controls"><button class="wc wc-close" onclick="closeWindow('win-home')"></button></div>
-        <div class="win-title">Home</div>
-      </div>
-      <div class="win-body">
-        <div class="ascii-banner">
- ██████╗ ███████╗███████╗██████╗  █████╗ ██╗     ██╗
- ██╔══██╗██╔════╝██╔════╝██╔══██╗██╔══██╗██║     ██║
- ██║  ██║█████╗  █████╗  ██████╔╝███████║██║     ██║
- ██║  ██║██╔══╝  ██╔══╝  ██╔═══╝ ██╔══██║██║     ██║
- ██████╔╝███████╗███████╗██║     ██║  ██║███████╗██║
- ╚═════╝ ╚══════╝╚══════╝╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝</div>
-        <div class="home-tagline">Deepali Saroha — Software Developer & ML Enthusiast</div>
-        <div class="home-desc">B.Tech CSE Student | National Table Tennis Player | Problem Solver</div>
-      </div>
+
+<!-- DESKTOP GREETING -->
+<div id="desktop-greeting">
+  <div class="dg-name">Deepali Saroha</div>
+  <div class="dg-sub">Computer Science Student · AI/ML & Software Engineer · India</div>
+  <div class="dg-hint">Click an app in the dock below to open it</div>
+</div>
+
+<!-- ── WINDOW: Home ── -->
+<div class="mac-window" id="win-home" style="top:60px;left:80px;width:640px;height:460px;">
+  <div class="win-titlebar" data-win="win-home">
+    <div class="win-controls">
+      <button class="wc wc-close" onclick="closeWindow('win-home')" title="Close"></button>
+      <button class="wc wc-min" onclick="minimizeWindow('win-home')" title="Minimize"></button>
+      <button class="wc wc-max" onclick="maximizeWindow('win-home')" title="Maximize"></button>
+    </div>
+    <div class="win-title">Home</div>
+  </div>
+  <div class="win-body">
+    <div class="ascii-banner"> ██████╗ ███████╗███████╗██████╗ █████╗ ██╗ ██╗ ██╔══██╗██╔════╝██╔════╝██╔══██╗██╔══██╗██║ ██║ ██║ ██║█████╗ █████╗ ██████╔╝███████║██║ ██║ ██║ ██║██╔══╝ ██╔══╝ ██╔═══╝ ██╔══██║██║ ██║ ██████╔╝███████╗███████╗██║ ██║ ██║███████╗██║ ╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═╝ ╚═╝╚══════╝╚═╝</div>
+
+    <div class="home-tagline">
+      <span class="hl-green">Deepali Saroha</span> — Computer Science Student
     </div>
 
-    <div class="mac-window" id="win-whoami" style="top:70px;left:100px;width:580px;height:420px;display:none;">
+    <div class="home-desc">
+      BTech Computer Science · CGPA: 8.4 · Open for internships
+    </div>
+
+    <div class="home-grid">
+      <div class="home-tile" onclick="openWindow('win-whoami')">
+        <div class="tile-icon">◉</div>
+        <div class="tile-label">whoami</div>
+        <div class="tile-desc">Identity & about me</div>
+      </div>
+
+      <div class="home-tile" onclick="openWindow('win-skills')">
+        <div class="tile-icon">◈</div>
+        <div class="tile-label">skills</div>
+        <div class="tile-desc">Capabilities & tools</div>
+      </div>
+
+      <div class="home-tile" onclick="openWindow('win-projects')">
+        <div class="tile-icon">◆</div>
+        <div class="tile-label">projects</div>
+        <div class="tile-desc">Work & builds</div>
+      </div>
+
+      <div class="home-tile" onclick="openWindow('win-contact')">
+        <div class="tile-icon">◎</div>
+        <div class="tile-label">contact</div>
+        <div class="tile-desc">Get in touch</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- ── WINDOW: Whoami ── -->
+    <div class="mac-window" id="win-whoami" style="top:80px;left:120px;width:600px;height:480px;display:none;">
       <div class="win-titlebar" data-win="win-whoami">
-        <div class="win-controls"><button class="wc wc-close" onclick="closeWindow('win-whoami')"></button></div>
+        <div class="win-controls">
+          <button class="wc wc-close" onclick="closeWindow('win-whoami')" title="Close"></button>
+          <button class="wc wc-min"   onclick="minimizeWindow('win-whoami')" title="Minimize"></button>
+          <button class="wc wc-max"   onclick="maximizeWindow('win-whoami')" title="Maximize"></button>
+        </div>
         <div class="win-title">Whoami</div>
       </div>
       <div class="win-body">
-        <div class="section-header"><span class="sec-path">~/</span><span class="sec-title">about_me</span></div>
-        <div class="prose-block">
-          I am a Computer Science undergraduate at Lovely Professional University with a strong foundation in Data Structures, Algorithms, and Machine Learning. Beyond code, I am a national-level Table Tennis player and a dedicated volunteer for community support.
-        </div>
+        <div class="section-header"><span class="sec-path">~/</span><span class="sec-title">whoami</span></div>
         <div class="info-block">
-          <div class="info-row"><span class="info-key">LANGUAGES</span><span class="info-val">English, Hindi, Punjabi, French (A1)</span></div>
-          <div class="info-row"><span class="info-key">LOCATION</span><span class="info-val">Jalandhar, Punjab, India</span></div>
+          <div class="info-row"><span class="info-key">NAME</span><span class="info-val hl-green">Deepali Saroha</span></div>
+          <div class="info-row"><span class="info-key">ROLE</span><span class="info-val">AI ML; Software Engineering; DSA Student</span></div>
+          <div class="info-row"><span class="info-key">DEGREE</span><span class="info-val">BTech Computer Science — <span class="hl-yellow">Lovely Professional University</span></span></div>
+          <div class="info-row"><span class="info-key">LOCATION</span><span class="info-val">India</span></div>
+          <div class="info-row"><span class="info-key">STATUS</span><span class="info-val hl-green">Student</span></div>
+          <div class="info-row"><span class="info-key">FOCUS</span><span class="info-val">AI ML · Data Science · DSA · Software Engineer</span></div>
         </div>
-      </div>
-    </div>
-
-    <div class="mac-window" id="win-skills" style="top:90px;left:150px;width:550px;height:400px;display:none;">
-      <div class="win-titlebar" data-win="win-skills">
-        <div class="win-controls"><button class="wc wc-close" onclick="closeWindow('win-skills')"></button></div>
-        <div class="win-title">Skills</div>
-      </div>
-      <div class="win-body">
-        <div class="skill-group-label">TECHNICAL STACK</div>
         <div class="prose-block">
-          • <b>Languages:</b> C++, C, Python, Swift, HTML, CSS, DBMS<br>
-          • <b>Tools:</b> MySQL, Jupyter, GitHub, Git, VS Code, Google Colab<br>
-          • <b>Soft Skills:</b> Problem-Solving, Team Player, Project Management
+        I am a results-driven Computer Science undergraduate at Lovely Professional University with a CGPA of 8.4, specializing in Machine Learning, NLP, and Full-Stack Development. I focus on building intelligent, data-driven solutions and optimizing complex systems through structured problem-solving.
+With hands-on experience in Python, C++, and Swift, I have developed practical applications ranging from AI-powered tax assistants to predictive smart parking systems and NLP-based news verification engines. I am deeply committed to algorithmic efficiency, having solved over 250+ problems on LeetCode.
+I am constantly expanding my technical arsenal—from Deep Learning to iOS development—to build software that is both innovative and socially impactful.
         </div>
       </div>
     </div>
 
-    <div class="mac-window" id="win-projects" style="top:60px;left:120px;width:650px;height:480px;display:none;">
-      <div class="win-titlebar" data-win="win-projects">
-        <div class="win-controls"><button class="wc wc-close" onclick="closeWindow('win-projects')"></button></div>
-        <div class="win-title">Projects</div>
-      </div>
-      <div class="win-body">
-        <div class="proj-card">
-          <div class="proj-name">Fake News Detection App</div>
-          <div class="proj-desc">NLP engine using linguistic patterns to classify news credibility. Tech: Streamlit, Pandas.</div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-name">Smart Parking System</div>
-          <div class="proj-desc">ML system for real-time slot optimization using Regression. Tech: Scikit-learn.</div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-name">Tax-Assistant AI Bot</div>
-          <div class="proj-desc">AI web app for tax advisory using Gemini API. Tech: HTML/CSS/JS.</div>
-        </div>
-      </div>
+
+<!-- ── WINDOW: Skills ── -->
+<div class="mac-window" id="win-skills" style="top:90px;left:160px;width:620px;height:500px;display:none;">
+  <div class="win-titlebar" data-win="win-skills">
+    <div class="win-controls">
+      <button class="wc wc-close" onclick="closeWindow('win-skills')" title="Close"></button>
+      <button class="wc wc-min" onclick="minimizeWindow('win-skills')" title="Minimize"></button>
+      <button class="wc wc-max" onclick="maximizeWindow('win-skills')" title="Maximize"></button>
+    </div>
+    <div class="win-title">Skills</div>
+  </div>
+
+  <div class="win-body">
+    <div class="section-header">
+      <span class="sec-path">~/</span>
+      <span class="sec-title">skills</span>
     </div>
 
-    <div class="mac-window" id="win-education" style="top:80px;left:130px;width:580px;height:400px;display:none;">
+    <div class="skill-group-label">LANGUAGES</div>
+    <div class="skill-bars">
+      <div class="skill-row"><span class="skill-name">C / C++</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct">--85%</span></div>
+      <div class="skill-row"><span class="skill-name">Python</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—79%</span></div>
+      <div class="skill-row"><span class="skill-name">Swift</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct">--60%</span></div>
+    </div>
+
+    <div class="skill-group-label">WEB & DATABASE</div>
+    <div class="skill-bars">
+      <div class="skill-row"><span class="skill-name">HTML</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—70%</span></div>
+      <div class="skill-row"><span class="skill-name">CSS</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—65%</span></div>
+      <div class="skill-row"><span class="skill-name">DBMS</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—77%</span></div>
+      <div class="skill-row"><span class="skill-name">MySQL</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—82%</span></div>
+    </div>
+
+    <div class="skill-group-label">TOOLS & PLATFORMS</div>
+    <div class="skill-bars">
+      <div class="skill-row"><span class="skill-name">Jupyter</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct">--85%</span></div>
+      <div class="skill-row"><span class="skill-name">GitHub</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—77%</span></div>
+      <div class="skill-row"><span class="skill-name">Git</span><div class="skill-track"><div class="skill-fill" style="width:0%"></div></div><span class="skill-pct”>—83%</span></div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- ── WINDOW: Projects ── -->
+<div class="mac-window" id="win-projects" style="top:70px;left:100px;width:680px;height:500px;display:none;">
+  <div class="win-titlebar" data-win="win-projects">
+    <div class="win-controls">
+      <button class="wc wc-close" onclick="closeWindow('win-projects')" title="Close"></button>
+      <button class="wc wc-min" onclick="minimizeWindow('win-projects')" title="Minimize"></button>
+      <button class="wc wc-max" onclick="maximizeWindow('win-projects')" title="Maximize"></button>
+    </div>
+    <div class="win-title">Projects</div>
+  </div>
+
+  <div class="win-body">
+    <div class="section-header">
+      <span class="sec-path">~/</span>
+      <span class="sec-title">projects</span>
+    </div>
+
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-num">01</div>
+        <div class="proj-domain">DOMAIN — NLP / AI</div>
+        <div class="proj-name">Fake News Detection App</div>
+        <div class="proj-desc">
+          Built a local NLP engine using pattern-driven linguistic analysis. 
+          Evaluates structural features, headline-body consistency, and manipulative language patterns. 
+          Generates real-time credibility scores with on-device processing.
+        </div>
+        <a href="https://github.com/Deepali06-2003/Fake-News-Detection-App/blob/main/code" target="_blank">
+          VIEW ON GITHUB ↗
+        </a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-num">02</div>
+        <div class="proj-domain">DOMAIN — MACHINE LEARNING</div>
+        <div class="proj-name">Smart Parking Management System</div>
+        <div class="proj-desc">
+          Developed an ML-based system for real-time parking slot prediction and optimization. 
+          Uses clustering and regression techniques to reduce congestion and waiting time.
+        </div>
+        <a href="https://github.com/Deepali06-2003/smart-parking-management-system" target="_blank">
+          VIEW ON GITHUB ↗
+        </a>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-num">03</div>
+        <div class="proj-domain">DOMAIN — WEB / AI</div>
+        <div class="proj-name">Tax-Assistant AI Bot</div>
+        <div class="proj-desc">
+          Built an AI-powered web application for tax calculation and advisory. 
+          Integrated Gemini API for real-time conversational responses with a clean UI.
+        </div>
+        <a href="https://github.com/Deepali06-2003/AI_Event_Planner" target="_blank">
+          VIEW ON GITHUB ↗
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+ <!-- ── WINDOW: Education ── -->
+    <div class="mac-window" id="win-education" style="top:80px;left:130px;width:600px;height:440px;display:none;">
       <div class="win-titlebar" data-win="win-education">
-        <div class="win-controls"><button class="wc wc-close" onclick="closeWindow('win-education')"></button></div>
+        <div class="win-controls">
+          <button class="wc wc-close" onclick="closeWindow('win-education')" title="Close"></button>
+          <button class="wc wc-min"   onclick="minimizeWindow('win-education')" title="Minimize"></button>
+          <button class="wc wc-max"   onclick="maximizeWindow('win-education')" title="Maximize"></button>
+        </div>
         <div class="win-title">Education</div>
       </div>
       <div class="win-body">
-        <div class="tl-entry">
-          <div class="tl-title">B.Tech CSE — Lovely Professional University</div>
-          <div class="tl-body">2023 – Present | CGPA: 8.4</div>
-        </div>
-        <div class="tl-entry">
-          <div class="tl-title">Intermediate — Innocent Hearts School</div>
-          <div class="tl-body">2021 – 2022 | Score: 90.2%</div>
-        </div>
-        <div class="tl-entry">
-          <div class="tl-title">Matriculation — Cambridge International School</div>
-          <div class="tl-body">2019 – 2020 | Score: 89%</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="mac-window" id="win-achievements" style="top:100px;left:160px;width:550px;height:380px;display:none;">
-      <div class="win-titlebar" data-win="win-achievements">
-        <div class="win-controls"><button class="wc wc-close" onclick="closeWindow('win-achievements')"></button></div>
-        <div class="win-title">Achievements</div>
-      </div>
-      <div class="win-body">
-        <div class="ach-item">◆ Solved 250+ Problems on LeetCode</div>
-        <div class="ach-item">◆ National Level Participant - Smart India Hackathon</div>
-        <div class="ach-item">◆ National Table Tennis Player - Inter-University Championship</div>
-      </div>
-    </div>
-
-    <div class="mac-window" id="win-certificates" style="top:110px;left:180px;width:600px;height:420px;display:none;">
-      <div class="win-titlebar" data-win="win-certificates">
-        <div class="win-controls"><button class="wc wc-close" onclick="closeWindow('win-certificates')"></button></div>
-        <div class="win-title">Certificates</div>
-      </div>
-      <div class="win-body">
-        <div class="prose-block">
-          • Privacy & Security in Online Social Media (NPTEL)<br>
-          • iOS Development for Beginners (GeeksforGeeks)<br>
-          • Deep Learning Mastery (Udemy)<br>
-          • Data Structures and Algorithms (Coding Ninjas)<br>
-          • A1 Level French (NIDS)
+        <div class="section-header"><span class="sec-path">~/</span><span class="sec-title">education</span></div>
+        <div class="timeline">
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <div class="tl-bar"></div>
+            <div class="tl-content">
+              <div class="tl-period">[Aug 2023 — PRESENT]</div>
+              <div class="tl-title">BTech — Computer Science</div>
+              <div class="tl-title">CGPA: 8.40</div>
+              <div class="tl-body">[Lovely Professional University, Punjab]<br>Specialization: AI ML &amp; DSA<br>Focus: Machine Learning, DSA, System Programming</div>
+            </div>
+          </div>
+          <div class="tl-entry">
+            <div class="tl-dot"></div>
+            <div class="tl-bar"></div>
+            <div class="tl-content">
+              <div class="tl-period">[Apr 2021 — Mar 2022]</div>
+              <div class="tl-title">Higher Secondary (11th–12th)</div>
+              <div class="tl-body”>[Innocent Hearts School , Jalandhar , Punjab]<br>[Stream — PCM]<br>[Percentage: 90.2%]</div>
+            </div>
+          </div>
+          <div class="tl-entry last">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <div class="tl-period">[Apr 2019 — Mar 2020]</div>
+              <div class="tl-title">Secondary Education (10th)</div>
+ <div class="tl-body">[Cambridge International School, Jalandhar , Punjab]<br>[Percentage: 89%]</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="mac-window" id="win-training" style="top:120px;left:200px;width:580px;height:350px;display:none;">
+
+
+<!-- ── WINDOW: Achievements ── -->
+<div class="mac-window" id="win-achievements" style="top:85px;left:110px;width:580px;height:420px;display:none;">
+  <div class="win-titlebar" data-win="win-achievements">
+    <div class="win-controls">
+      <button class="wc wc-close" onclick="closeWindow('win-achievements')" title="Close"></button>
+      <button class="wc wc-min" onclick="minimizeWindow('win-achievements')" title="Minimize"></button>
+      <button class="wc wc-max" onclick="maximizeWindow('win-achievements')" title="Maximize"></button>
+    </div>
+    <div class="win-title">Achievements</div>
+  </div>
+
+  <div class="win-body">
+    <div class="section-header">
+      <span class="sec-path">~/</span>
+      <span class="sec-title">achievements</span>
+    </div>
+
+    <div class="ach-group">
+      <div class="ach-group-label">TECHNICAL</div>
+      <div class="ach-item"><span class="ach-bullet">◆</span>Solved 250+ problems on LeetCode</div>
+    </div>
+
+    <div class="ach-group">
+      <div class="ach-group-label">SPORTS</div>
+      <div class="ach-item"><span class="ach-bullet">◆</span>Participated in All India Inter-University Table Tennis Championship — Osmania University, Hyderabad (Dec 2025)</div>
+    </div>
+
+    <div class="ach-group">
+      <div class="ach-group-label">SOCIAL WORK</div>
+      <div class="ach-item"><span class="ach-bullet">◆</span>Volunteer at Old Age Home — Apahaj Ashram, Jalandhar (Jun 2024 - Jul 2024)</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ── WINDOW: Certifications ── -->
+<div class="mac-window" id="win-certifications" style="top:75px;left:140px;width:660px;height:460px;display:none;">
+  <div class="win-titlebar" data-win="win-certifications">
+    <div class="win-controls">
+      <button class="wc wc-close" onclick="closeWindow('win-certifications')" title="Close"></button>
+      <button class="wc wc-min" onclick="minimizeWindow('win-certifications')" title="Minimize"></button>
+      <button class="wc wc-max" onclick="maximizeWindow('win-certifications')" title="Maximize"></button>
+    </div>
+    <div class="win-title">Certifications</div>
+  </div>
+
+  <div class="win-body">
+    <div class="section-header">
+      <span class="sec-path">~/</span>
+      <span class="sec-title">certifications</span>
+    </div>
+
+    <div class="cert-grid">
+
+      <div class="cert-card">
+        <div class="cert-num">01</div>
+        <div class="info-row"><span class="info-key">CERT</span><span class="info-val">Privacy and Security in Online Social Media</span></div>
+        <div class="info-row"><span class="info-key">BY</span><span class="info-val">NPTEL</span></div>
+        <div class="info-row"><span class="info-key">DATE</span><span class="info-val">Oct 2025</span></div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-num">02</div>
+        <div class="info-row"><span class="info-key">CERT</span><span class="info-val">IOS Development for Beginners (Swift)</span></div>
+        <div class="info-row"><span class="info-key">BY</span><span class="info-val">GeeksforGeeks</span></div>
+        <div class="info-row"><span class="info-key">DATE</span><span class="info-val">Jun 2025</span></div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-num">03</div>
+        <div class="info-row"><span class="info-key">CERT</span><span class="info-val">Deep Learning Mastery (Python)</span></div>
+        <div class="info-row"><span class="info-key">BY</span><span class="info-val">Udemy</span></div>
+        <div class="info-row"><span class="info-key">DATE</span><span class="info-val">Mar 2025</span></div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-num">04</div>
+        <div class="info-row"><span class="info-key">CERT</span><span class="info-val">Data Structures and Algorithms (Python)</span></div>
+        <div class="info-row"><span class="info-key">BY</span><span class="info-val">Coding Ninjas</span></div>
+        <div class="info-row"><span class="info-key">DATE</span><span class="info-val">Aug 2023</span></div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-num">05</div>
+        <div class="info-row"><span class="info-key">CERT</span><span class="info-val">Introduction to Python</span></div>
+        <div class="info-row"><span class="info-key">BY</span><span class="info-val">Coding Ninjas</span></div>
+        <div class="info-row"><span class="info-key">DATE</span><span class="info-val">Apr 2023</span></div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-num">06</div>
+        <div class="info-row"><span class="info-key">CERT</span><span class="info-val">A1 Level French</span></div>
+        <div class="info-row"><span class="info-key">BY</span><span class="info-val">NIDS</span></div>
+        <div class="info-row"><span class="info-key">DATE</span><span class="info-val">Jan 2023</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+ <!-- ── WINDOW: Training ── -->
+    <div class="mac-window" id="win-training" style="top:80px;left:120px;width:620px;height:480px;display:none;">
       <div class="win-titlebar" data-win="win-training">
-        <div class="win-controls"><button class="wc wc-close" onclick="closeWindow('win-training')"></button></div>
+        <div class="win-controls">
+          <button class="wc wc-close" onclick="closeWindow('win-training')" title="Close"></button>
+          <button class="wc wc-min"   onclick="minimizeWindow('win-training')" title="Minimize"></button>
+          <button class="wc wc-max"   onclick="maximizeWindow('win-training')" title="Maximize"></button>
+        </div>
         <div class="win-title">Training</div>
       </div>
       <div class="win-body">
-        <div class="tl-title">DSA — Hitbullseye</div>
-        <div class="tl-body">140-hour comprehensive program covering beginner to advanced algorithmic problem-solving.</div>
+        <div class="section-header"><span class="sec-path">~/</span><span class="sec-title">training</span></div>
+        <div class="training-tabs">
+          <button class="tab-btn active" data-tab="tab-sec">cybersec</button>
+          <button class="tab-btn" data-tab="tab-dsa">dsa</button>
+          <button class="tab-btn" data-tab="tab-courses">courses</button>
+        </div>
+
+
+
+        <div class="tab-pane active" id="tab-sec">
+          <div class="timeline">
+            <div class="tl-entry">
+              <div class="tl-dot"></div>
+              <div class="tl-bar"></div>
+              <div class="tl-content">
+                <div class="tl-period">Jun 2025 — Jul 2025</div>
+                <div class="tl-title">Data Structures and Algorithms — Hitbullseye</div>
+                <div class="tl-body">Completed a 140-hour Data Structures and Algorithms program from beginner to advanced level.<br>
+          Strengthened analytical reasoning and algorithmic understanding.<br>
+          Improved problem-solving efficiency through structured practice.</div>
+              </div>
+            </div>
+   </div>
+        </div>
+        <div class="tab-pane" id="tab-dsa">
+          <div class="timeline">
+            <div class="tl-entry">
+              <div class="tl-dot"></div>
+              <div class="tl-bar"></div>
+              <div class="tl-content">
+                <div class="tl-period">[YEAR — PRESENT]</div>
+                <div class="tl-title">COMPETITIVE PROGRAMMING</div>
+                <div class="tl-body">[e.g. LeetCode — X problems solved, rating, Codeforces handle + max rating]</div>
+              </div>
+            </div>
+<div class="tl-entry last">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-period">[YEAR]</div>
+                <div class="tl-title">TOPICS MASTERED</div>
+                <div class="tl-body">[e.g. Trees, Graphs, DP, Segment Trees, Backtracking, Sorting algorithms]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="tab-courses">
+
+ <div class="ach-item"><span class="ach-bullet">◆</span> Privacy and Security in Online Social Media — NPTEL — 2025</div>
+ </div>
       </div>
     </div>
 
-    <div class="mac-window" id="win-resume" style="top:130px;left:220px;width:450px;height:250px;display:none;">
+
+
+ <!-- ── WINDOW: Resume ── -->
+    <div class="mac-window" id="win-resume" style="top:100px;left:200px;width:500px;height:340px;display:none;">
       <div class="win-titlebar" data-win="win-resume">
-        <div class="win-controls"><button class="wc wc-close" onclick="closeWindow('win-resume')"></button></div>
+        <div class="win-controls">
+          <button class="wc wc-close" onclick="closeWindow('win-resume')" title="Close"></button>
+          <button class="wc wc-min"   onclick="minimizeWindow('win-resume')" title="Minimize"></button>
+          <button class="wc wc-max"   onclick="maximizeWindow('win-resume')" title="Maximize"></button>
+        </div>
         <div class="win-title">Resume</div>
       </div>
       <div class="win-body">
+        <div class="section-header"><span class="sec-path">~/</span><span class="sec-title">resume</span></div>
         <div class="resume-block">
-          <a href="#" class="res-btn">DOWNLOAD RESUME PDF</a>
+          <div class="resume-icon">▣</div>
+          <div class="resume-label">Deepali Saroha— Resume.pdf</div>
+          <div class="resume-actions">
+            <a href="https://drive.google.com/file/d/1PL9XiBmN26JuV1tB3beUG_ZogBgWIYQb/view?usp=sharing" target="_blank" class="res-btn">◈ &nbsp; OPEN IN NEW TAB &nbsp; ↗</a>
+            <a href="https://drive.google.com/file/d/1PL9XiBmN26JuV1tB3beUG_ZogBgWIYQb/view?usp=sharing" download class="res-btn">▣ &nbsp; DOWNLOAD PDF</a>
+          </div>
+         <!-- <div class="resume-hint">[ Place your resume at assets/Deepali.pdf ]</div> -->
         </div>
       </div>
     </div>
 
-    <div class="mac-window" id="win-contact" style="top:140px;left:240px;width:500px;height:320px;display:none;">
+
+
+
+<!-- ── WINDOW: Contact ── -->
+    <div class="mac-window" id="win-contact" style="top:90px;left:150px;width:580px;height:420px;display:none;">
       <div class="win-titlebar" data-win="win-contact">
-        <div class="win-controls"><button class="wc wc-close" onclick="closeWindow('win-contact')"></button></div>
+        <div class="win-controls">
+          <button class="wc wc-close" onclick="closeWindow('win-contact')" title="Close"></button>
+          <button class="wc wc-min"   onclick="minimizeWindow('win-contact')" title="Minimize"></button>
+          <button class="wc wc-max"   onclick="maximizeWindow('win-contact')" title="Maximize"></button>
+        </div>
         <div class="win-title">Contact</div>
       </div>
       <div class="win-body">
-        <div class="contact-row"><span>Email:</span> <a href="mailto:deepali46045@gmail.com">deepali46045@gmail.com</a></div>
-        <div class="contact-row"><span>LinkedIn:</span> <a href="https://linkedin.com/in/deepali-saroha2003">deepali-saroha2003</a></div>
-        <div class="contact-row"><span>GitHub:</span> <a href="https://github.com/Deepali06-2003">Deepali06-2003</a></div>
-        <div class="contact-row"><span>Mobile:</span> +91-9417721411</div>
+        <div class="section-header"><span class="sec-path">~/</span><span class="sec-title">contact</span></div>
+        <div class="contact-list">
+          <div class="contact-row">
+            <span class="contact-pfx">$</span>
+            <span class="contact-key">GITHUB</span>
+            <span class="contact-val"><a href="https://github.com/Deepali06-2003" target="_blank">github.com/Deepali06-2003</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-pfx">$</span>
+            <span class="contact-key">LINKEDIN</span>
+            <span class="contact-val"><a href="https://www.linkedin.com/in/deepali-saroha2003/" target="_blank">linkedin.com/in/deepali-saroha</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-pfx">$</span>
+            <span class="contact-key">EMAIL</span>
+            <span class="contact-val"><a href="mailto:[YOUR_EMAIL]">deepali46045@gmail.com</a></span>
+          </div>
+          <!-- <div class="contact-row">
+            <span class="contact-pfx">$</span>
+            <span class="contact-key">TWITTER/X</span>
+            <span class="contact-val"><a href="#">[YOUR HANDLE]</a></span>
+          </div> -->
+        </div>
+        <div class="prose-block" style="margin-top:16px">
+          I am open to internships, ML projects, and collaborative opportunities. Feel free to reach out for discussions, learning, or building something impactful together.
+        </div>
       </div>
     </div>
+  </div><!-- /desktop -->
 
-  </div><div id="dock">
+<!-- ══════════ macOS DOCK ══════════ -->
+  <div id="dock">
     <div class="dock-inner">
-      <div class="dock-item" onclick="openWindow('win-home')" title="Home">H</div>
-      <div class="dock-item" onclick="openWindow('win-whoami')" title="Whoami">W</div>
-      <div class="dock-item" onclick="openWindow('win-skills')" title="Skills">S</div>
-      <div class="dock-item" onclick="openWindow('win-projects')" title="Projects">P</div>
-      <div class="dock-item" onclick="openWindow('win-education')" title="Education">E</div>
-      <div class="dock-item" onclick="openWindow('win-achievements')" title="Achievements">A</div>
-      <div class="dock-item" onclick="openWindow('win-certificates')" title="Certificates">C</div>
-      <div class="dock-item" onclick="openWindow('win-training')" title="Training">T</div>
-      <div class="dock-item" onclick="openWindow('win-resume')" title="Resume">R</div>
-      <div class="dock-item" onclick="openWindow('win-contact')" title="Contact">@</div>
+
+      <div class="dock-item" data-win="win-home" onclick="openWindow('win-home')" title="Home">
+        <div class="dock-icon dock-icon-home">H</div>
+        <div class="dock-label">Home</div>
+        <div class="dock-dot" id="dot-win-home"></div>
+      </div>
+
+      <div class="dock-item" data-win="win-whoami" onclick="openWindow('win-whoami')" title="Whoami">
+        <div class="dock-icon dock-icon-whoami">W</div>
+        <div class="dock-label">Whoami</div>
+        <div class="dock-dot" id="dot-win-whoami"></div>
+      </div>
+
+      <div class="dock-item" data-win="win-skills" onclick="openWindow('win-skills')" title="Skills">
+        <div class="dock-icon dock-icon-skills">S</div>
+        <div class="dock-label">Skills</div>
+        <div class="dock-dot" id="dot-win-skills"></div>
+      </div>
+
+      <div class="dock-item" data-win="win-projects" onclick="openWindow('win-projects')" title="Projects">
+        <div class="dock-icon dock-icon-projects">P</div>
+        <div class="dock-label">Projects</div>
+        <div class="dock-dot" id="dot-win-projects"></div>
+      </div>
+
+      <div class="dock-item" data-win="win-education" onclick="openWindow('win-education')" title="Education">
+        <div class="dock-icon dock-icon-education">E</div>
+        <div class="dock-label">Education</div>
+        <div class="dock-dot" id="dot-win-education"></div>
+      </div>
+
+      <div class="dock-item" data-win="win-achievements" onclick="openWindow('win-achievements')" title="Achievements">
+        <div class="dock-icon dock-icon-achievements">A</div>
+        <div class="dock-label">Achievements</div>
+        <div class="dock-dot" id="dot-win-achievements"></div>
+      </div>
+
       <div class="dock-sep"></div>
-      <div class="dock-item" onclick="doLogout()" title="Logout">↩</div>
+
+      <div class="dock-item" data-win="win-certifications" onclick="openWindow('win-certifications')" title="Certifications">
+        <div class="dock-icon dock-icon-certifications">C</div>
+        <div class="dock-label">Certifications</div>
+        <div class="dock-dot" id="dot-win-certifications"></div>
+      </div>
+
+      <div class="dock-item" data-win="win-training" onclick="openWindow('win-training')" title="Training">
+        <div class="dock-icon dock-icon-training">T</div>
+        <div class="dock-label">Training</div>
+        <div class="dock-dot" id="dot-win-training"></div>
+      </div>
+
+      <div class="dock-item" data-win="win-resume" onclick="openWindow('win-resume')" title="Resume">
+        <div class="dock-icon dock-icon-resume">R</div>
+        <div class="dock-label">Resume</div>
+        <div class="dock-dot" id="dot-win-resume"></div>
+      </div>
+
+      <div class="dock-sep"></div>
+
+      <div class="dock-item" data-win="win-contact" onclick="openWindow('win-contact')" title="Contact">
+        <div class="dock-icon dock-icon-contact">C</div>
+        <div class="dock-label">Contact</div>
+        <div class="dock-dot" id="dot-win-contact"></div>
+      </div>
+
+      <div class="dock-item dock-item-logout" onclick="doLogout()" title="Logout">
+        <div class="dock-icon dock-icon-logout">↩</div>
+        <div class="dock-label">Logout</div>
+        <div class="dock-dot"></div>
+      </div>
+
     </div>
   </div>
 
-</div>
+</div><!-- /os -->
 
 <script src="script.js"></script>
 </body>
